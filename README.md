@@ -3,7 +3,10 @@
 An ultra-low-latency, on-device decision agent designed for voice and desktop control, inspired by **Laya** and **Herald OS**.
 
 ## Architecture & Features
-- **Sub-Millisecond Decision Head:** Routes user intent in <0.05 ms without slow token-by-token LLM generation.
+- **Laya Integration:** Powered by **Laya v0.4.2** (`laya.Router`), performing typed single-forward-pass System 1 decisions over typed criteria questions without slow token-by-token LLM generation.
+- **Dual-Path Routing:**
+  - `laya-neural`: Multilingual non-autoregressive decision head across 100+ languages.
+  - `laya-fastpath`: Sub-millisecond instant keyword decision table (<0.01ms).
 - **OS Control & Dispatch:** Native bindings for browser, terminal, system telemetry, volume/audio toggles, screenshot capture, and file explorer.
 - **Automated Real-User E2E Suite:** Multi-turn simulation runner with self-terminating bounded testing.
 

@@ -9,7 +9,7 @@ import time
 import json
 import random
 from pathlib import Path
-from agent import FastIntentClassifier, execute_command
+from agent import LayaVoiceAgent, execute_command
 
 STATE_FILE = Path("/home/lokesh/projects/fast-voice-agent/run_state.json")
 LOG_FILE = Path("/home/lokesh/projects/fast-voice-agent/logs/cron.log")
@@ -56,7 +56,7 @@ def run_simulation_cycle():
         save_state(state)
         return
 
-    classifier = FastIntentClassifier()
+    classifier = LayaVoiceAgent(use_neural=False)
     scenario_batch = random.sample(TEST_SCENARIOS, k=4)
 
     cycle_results = []
